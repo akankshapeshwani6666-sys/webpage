@@ -11,8 +11,8 @@
         body { font-family: Arial, sans-serif; }
 
         .hero {
-            /* Use a whole-spices photo named 'whole-spices.jpg' (place at repo root) */
-            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('whole-spices.jpg') center/cover no-repeat;
+            /* hero uses a responsive image element now (see markup) */
+            position: relative;
             /* responsive hero sizing */
             min-height: 60vh;
             max-height: 85vh;
@@ -22,6 +22,34 @@
             color: #fff;
             text-shadow: 2px 2px 3px #000;
             padding: 2rem 0;
+            overflow: hidden;
+        }
+
+        /* gradient overlay above the image */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+            z-index: 1;
+        }
+
+        /* picture/img used for hero background */
+        .hero-media {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2; /* above overlay */
         }
 
         /* make hero more compact on small screens */
@@ -30,7 +58,6 @@
                 min-height: 45vh;
                 height: auto;
                 padding: 3rem 0;
-                background-position: center 30%;
             }
             .display-4 {
                 font-size: 2rem;
@@ -68,6 +95,15 @@
 
 <!-- Hero -->
 <section class="hero text-center">
+    <!-- Responsive hero image using Unsplash WebP srcsets -->
+    <div class="hero-media" aria-hidden="true">
+        <picture>
+            <source type="image/webp" srcset="https://images.unsplash.com/photo-1547517027-3a50fb9b5d59?auto=format&fit=crop&w=1600&q=80&fm=webp 1600w, https://images.unsplash.com/photo-1547517027-3a50fb9b5d59?auto=format&fit=crop&w=1200&q=80&fm=webp 1200w, https://images.unsplash.com/photo-1547517027-3a50fb9b5d59?auto=format&fit=crop&w=800&q=80&fm=webp 800w" sizes="100vw">
+            <!-- Fallback JPEG/PNG from Unsplash CDN -->
+            <img src="https://images.unsplash.com/photo-1547517027-3a50fb9b5d59?auto=format&fit=crop&w=1600&q=80" alt="Assortment of whole spices" loading="lazy">
+        </picture>
+    </div>
+
     <div class="container">
         <!-- Logo removed as requested -->
         <h1 class="display-4 fw-bold">Brij Agro Industries</h1>
@@ -92,30 +128,46 @@
         <h2 class="section-title text-center">Our Products</h2>
         <div class="row g-4">
 
+            <!-- Fennel -->
             <div class="col-md-3">
                 <div class="product-card text-center">
-                    <img src="fennel.jpg" class="product-img" alt="Fennel Seeds" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=80&fm=webp 800w, https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=400&q=80&fm=webp 400w" sizes="(max-width:576px) 100vw, 25vw">
+                        <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=800&q=80" alt="Fennel seeds in a bowl" class="product-img" loading="lazy">
+                    </picture>
                     <h5 class="mt-3">Fennel Seeds</h5>
                 </div>
             </div>
 
+            <!-- Cumin -->
             <div class="col-md-3">
                 <div class="product-card text-center">
-                    <img src="cumin.jpg" class="product-img" alt="Cumin Seeds" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?auto=format&fit=crop&w=800&q=80&fm=webp 800w, https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?auto=format&fit=crop&w=400&q=80&fm=webp 400w" sizes="(max-width:576px) 100vw, 25vw">
+                        <img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f642?auto=format&fit=crop&w=800&q=80" alt="Cumin seeds close-up" class="product-img" loading="lazy">
+                    </picture>
                     <h5 class="mt-3">Cumin Seeds</h5>
                 </div>
             </div>
 
+            <!-- Coriander -->
             <div class="col-md-3">
                 <div class="product-card text-center">
-                    <img src="coriander.jpg" class="product-img" alt="Coriander Seeds" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="https://images.unsplash.com/photo-1506807803488-8eafc1532e4e?auto=format&fit=crop&w=800&q=80&fm=webp 800w, https://images.unsplash.com/photo-1506807803488-8eafc1532e4e?auto=format&fit=crop&w=400&q=80&fm=webp 400w" sizes="(max-width:576px) 100vw, 25vw">
+                        <img src="https://images.unsplash.com/photo-1506807803488-8eafc1532e4e?auto=format&fit=crop&w=800&q=80" alt="Coriander seeds" class="product-img" loading="lazy">
+                    </picture>
                     <h5 class="mt-3">Coriander Seeds</h5>
                 </div>
             </div>
 
+            <!-- Bajra -->
             <div class="col-md-3">
                 <div class="product-card text-center">
-                    <img src="bajra.jpg" class="product-img" alt="Pearl Millets" loading="lazy">
+                    <picture>
+                        <source type="image/webp" srcset="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=800&q=80&fm=webp 800w, https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=400&q=80&fm=webp 400w" sizes="(max-width:576px) 100vw, 25vw">
+                        <img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=800&q=80" alt="Pearl millets (bajra)" class="product-img" loading="lazy">
+                    </picture>
                     <h5 class="mt-3">Pearl Millets (Bajra)</h5>
                 </div>
             </div>
