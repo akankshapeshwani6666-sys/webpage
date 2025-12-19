@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brij Agro Industries</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+    <style>
+        body { font-family: Arial, sans-serif; }
+
+        .hero {
+            background: url('bg.jpg') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 3px #000;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c5e1a;
+        }
+
+        .product-card {
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background: #fff;
+        }
+
+        .product-img {
+            width: 100%;
+            border-radius: 6px;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        footer {
+            background: #2c5e1a;
+            padding: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero text-center">
+    <div class="container">
+        <img src="logo.png" width="140" alt="Company Logo" class="mb-3">
+        <h1 class="display-4 fw-bold">Brij Agro Industries</h1>
+        <p class="lead">Manufacturers of Premium whole spices in Rajasthan</p>
+        <a href="#contact" class="btn btn-light btn-lg">Contact Us</a>
+    </div>
+</section>
+
+<!-- About -->
+<section class="py-5 container">
+    <h2 class="section-title text-center">About Us</h2>
+    <p class="text-center">
+        Brij Agro Industries is a trusted manufacturer and supplier of premium quality Indian spices and grains.
+        Located in Niwai (Tonk – Rajasthan), we specialize in processing and supplying
+        <b>Fennel Seeds, Cumin Seeds, Coriander Seeds, Pearl Millets.</b>
+    </p>
+</section>
+
+<!-- Products -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Our Products</h2>
+        <div class="row g-4">
+
+            <div class="col-md-3">
+                <div class="product-card text-center">
+                    <img src="fennel.jpg" class="product-img">
+                    <h5 class="mt-3">Fennel Seeds</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="product-card text-center">
+                    <img src="cumin.jpg" class="product-img">
+                    <h5 class="mt-3">Cumin Seeds</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="product-card text-center">
+                    <img src="coriander.jpg" class="product-img">
+                    <h5 class="mt-3">Coriander Seeds</h5>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="product-card text-center">
+                    <img src="bajra.jpg" class="product-img">
+                    <h5 class="mt-3">Pearl Millets (Bajra)</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5 container">
+    <h2 class="section-title text-center">Contact Us</h2>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h5>📍 Address</h5>
+            <p>Behind Assam Edible Oil Mill, Niwai (Tonk – Rajasthan)</p>
+
+            <h5>📞 Phone</h5>
+            <p>85628 66666<br>+91 73576 85505</p>
+
+            <h5>📧 Email</h5>
+            <p><a href="mailto:brijagroindustries.newai@gmail.com">brijagroindustries.newai@gmail.com</a></p>
+        </div>
+
+        <div class="col-md-6">
+            <form>
+                <input class="form-control mb-2" type="text" placeholder="Your Name">
+                <input class="form-control mb-2" type="email" placeholder="Email">
+                <input class="form-control mb-2" type="text" placeholder="Phone">
+                <textarea class="form-control mb-2" placeholder="Message"></textarea>
+                <button class="btn btn-success w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center">
+    <p>© 2025 Brij Agro Industries — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
